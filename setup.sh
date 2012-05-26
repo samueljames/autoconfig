@@ -9,6 +9,7 @@ cp ./conf/openbox/* ~/.config/openbox/
 cp ./img/pictures/ -r ~/
 cp ./conf/vim/* ~/
 cp ./conf/aliedit/* ~/.mozilla/plugins/
+cp ./conf/system/* /etc/
 
 #install applications
 
