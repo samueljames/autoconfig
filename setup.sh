@@ -14,5 +14,5 @@ cp ./conf/system/* /etc/
 #install applications
 pacman -Syu xorg xorg-xinit xf86-video-nouveau alsa-utils firefox \
 firefox-i18n-zh-cn openbox ibus-pinyin openssh xcompmgr rxvt-unicode \
-flashpluign wqy-zenhei ttf-dejavu ttf-arphic-uming vim feh git sudo \
+flashplugin wqy-zenhei ttf-dejavu ttf-arphic-uming vim feh git sudo \
 scrot gimp
