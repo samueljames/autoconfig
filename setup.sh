@@ -17,6 +17,9 @@ cp ./conf/vim/* ~/
 cp ./conf/aliedit/* ~/.mozilla/plugins/
 cp ./conf/system/* /etc/
 
+#alidit debug
+ln -sf /usr/lib/libpng /usr/lib/libpng12.so.0
+
 #start X
 
 echo "now run openbox?(yes or no)"
