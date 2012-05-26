@@ -1,0 +1,5 @@
+urxvt.depth:32
+urxvt.background:[80]#000000
+urxvt.foreground:#ffffff
+urxvt.font:xft:dejavu sans mono:size=18
+urxvt.scrollBar:false
