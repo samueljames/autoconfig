@@ -1,7 +1,5 @@
 #!/bin/bash
-#last change 2012-05-27
 #code by Samuel James
-#
 
 if [ `id -u` != "0" ]; then
 	echo "you are not root,please change to root and run this script"
@@ -59,6 +57,10 @@ if [ "$username" = "" ]; then
 	#configure system
 	cp ./conf/init/.xinitrc /home/$username/.xinitrc
 
+	cp ./conf/init/.bashrc /home/$username/.bashrc
+
+	cp ./conf/init/.bash_profile  /home/$username/.bash_profile
+
 	cp ./conf/init/.Xresources /home/$username/.Xresources
 
 	cp ./conf/openbox/autostart /home/$username/.config/openbox/autostart
@@ -97,6 +99,10 @@ if [ "$username" = "" ]; then
 	chown -R $username:$usernmae /home/$username/.vimrc
 
 	chown -R $username:$usernmae /home/$username/pictures/.background/bg.jpg
+
+	chown -R $username:$usernmae /home/$username/.bashrc
+
+	chown -R $username:$usernmae /home/$username/.bash_profile
 
 	#clear and exit install
 	clear
