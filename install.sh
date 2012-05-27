@@ -49,32 +49,53 @@ if [ "$username" = "" ]; then
 
 	#initialization user space
 	mkdir /home/$username/git 
+
 	mkdir /home/$username/downloads 
+
 	mkdir -p /home/$username/pictures/.background
+
 	mkdir -p /home/$username/.config/openbox
 
 	#configure system
 	cp ./conf/init/.xinitrc /home/$username/.xinitrc
+
 	cp ./conf/init/.Xresources /home/$username/.Xresources
+
 	cp ./conf/openbox/autostart /home/$username/.config/openbox/autostart
+
 	cp ./conf/openbox/environment /home/$username/.config/openbox/environment
+
 	cp ./conf/openbox/menu.xml /home/$username/.config/openbox/menu.xml
+
 	cp ./conf/openbox/rc.xml /home/$username/.config/openbox/rc.xml
+
 	cp ./img/pictures/.background/bg.jpg /home/$username/pictures/.background/bg.jpg
+
 	cp ./conf/vim/.vimrc /home/$username/.vimrc
+
 	cp ./conf/aliedit/libaliedit64.so /home/$username/.mozilla/plugins/libaliedit64.so
+
 	cp ./conf/system/mkinitcpio.conf /etc/mkinitcpio.conf
+
 	cp ./conf/system/rc.conf /etc/rc.conf
 
 	#change file to user	
 	chown -R $username:$usernmae /home/$username/.mozilla/plugins/libaliedit64.so
+
 	chown -R $username:$usernmae /home/$username/.xinitrc
+
 	chown -R $username:$usernmae /home/$username/.Xresources
+
 	chown -R $username:$usernmae /home/$username/.config/openbox/autostart
+
 	chown -R $username:$usernmae /home/$username/.config/openbox/environment
+
 	chown -R $username:$usernmae /home/$username/.config/openbox/menu.xml
+
 	chown -R $username:$usernmae /home/$username/.config/openbox/rc.xml
+
 	chown -R $username:$usernmae /home/$username/.vimrc
+
 	chown -R $username:$usernmae /home/$username/pictures/.background/bg.jpg
 
 	#clear and exit install
