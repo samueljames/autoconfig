@@ -1,6 +1,7 @@
 #!/bin/bash
 #last change 2012-05-27
 #code by Samuel James
+#
 
 if [ `id -u` != "0" ]; then
 	echo "you are not root,please change to root and run this script"
