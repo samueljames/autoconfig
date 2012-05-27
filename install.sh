@@ -11,7 +11,10 @@ else
 #install application 
 read -p "install base application? (yes or no): " install
 echo -e "\n"
-if [ $install = "yes" ]; then
+if [ $install != "yes" ]; then
+	echo "you need install base applications"
+	exit 1
+else
 
 pacman -Syu xorg xorg-xinit xf86-video-nouveau alsa-utils firefox \
 firefox-i18n-zh-cn openbox ibus-pinyin openssh xcompmgr rxvt-unicode \
@@ -21,21 +24,20 @@ scrot gimp
 #alidit libpng debug
 ln -sf /usr/lib/libpng /usr/lib/libpng12.so.0
 
-#set system
-read -p "do you need auto set system? (yes or no): " select
+#configure system
+read -p "do you need auto configure system? (yes or no): " select
 echo -e "\n"
 if [ "$select" = "yes" ]; then
 
 read -p "do you have a user? (yes or no): " haveuser
 echo -e "\n"
-else if [ "$install" = "no" ]; then
-	echo "may be you just need install base applications"
+else  then
+	echo "may be you need create a user"
 	exit 1
-fi
 fi
 
 if [ "$haveuser" = "yes" ]; then
-	read -p "user name is? [default:samuel]: " username
+	read -p "user name is? [default is samuel]: " username
 	echo -e "\n"
 else
 	echo "you are using root,maybe you need run startx"
@@ -63,7 +65,8 @@ if [ "$username" = "" ]; then
 	cp ./conf/aliedit/libaliedit64.so /home/$username/.mozilla/plugins/libaliedit64.so
 	cp ./conf/system/mkinitcpio.conf /etc/mkinitcpio.conf
 	cp ./conf/system/rc.conf /etc/rc.conf
-	
+
+	#change file to user	
 	chown -R $username:$usernmae /home/$username/.mozilla/plugins/libaliedit64.so
 	chown -R $username:$usernmae /home/$username/.xinitrc
 	chown -R $username:$usernmae /home/$username/.Xresources
@@ -74,6 +77,7 @@ if [ "$username" = "" ]; then
 	chown -R $username:$usernmae /home/$username/.vimrc
 	chown -R $username:$usernmae /home/$username/pictures/.background/bg.jpg
 
+	#clear and exit install
 	clear
 	echo -e "\n"
 	echo "your system is set 
