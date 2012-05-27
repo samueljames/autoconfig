@@ -1,11 +1,15 @@
 #!/bin/bash
+#last change 2012-05-27
+#code by Samuel James
+
 if [ `id -u` != "0" ]; then
 	echo "you are not root , please change to root and run this script"
- 	exit 0
+ 	exit 1
 else
 
 #install application 
 read -p "install base application?: " install
+echo -e "\n"
 if [ $install = "yes" ]; then
 
 pacman -Syu xorg xorg-xinit xf86-video-nouveau alsa-utils firefox \
@@ -20,11 +24,11 @@ ln -sf /usr/lib/libpng /usr/lib/libpng12.so.0
 
 #set system
 read -p "do you need auto set system? (yes or no): " select
-
+echo -e "\n"
 if [ "$select" = "yes" ]; then
 
 read -p "do you have a user? (yes or no): " haveuser
-
+echo -e "\n"
 else
 	echo "may be you just need install base applications"
 	exit 1
@@ -32,6 +36,7 @@ fi
 
 if [ "$haveuser" = "yes" ]; then
 	read -p "user name is? [default:samuel]: " username
+	echo -e "\n"
 else
 	echo "you are using root , maybe you need run startx"
 	exit 1
@@ -57,6 +62,10 @@ if [ "$username" = "" ]; then
 	cp ./conf/aliedit/libaliedit64.so /home/$username/.mozilla/plugins/libaliedit64.so
 	cp ./conf/system/mkinitcpio.conf /etc/mkinitcpio.conf
 	cp ./conf/system/rc.conf /etc/rc.conf
+
+	clear
+	echo -e "\n"
+	echo "your system is set"
 fi
 fi
 fi
