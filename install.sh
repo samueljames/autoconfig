@@ -3,12 +3,12 @@
 #code by Samuel James
 
 if [ `id -u` != "0" ]; then
-	echo "you are not root , please change to root and run this script"
+	echo "you are not root,please change to root and run this script"
  	exit 1
 else
 
 #install application 
-read -p "install base application?: " install
+read -p "install base application? (yes or no): " install
 echo -e "\n"
 if [ $install = "yes" ]; then
 
@@ -38,9 +38,8 @@ if [ "$haveuser" = "yes" ]; then
 	read -p "user name is? [default:samuel]: " username
 	echo -e "\n"
 else
-	echo "you are using root , maybe you need run startx"
-	exit 1
-fi
+	echo "you are using root,maybe you need run startx"
+	username="root"
 
 if [ "$username" = "" ]; then
 	username="samuel"
@@ -65,7 +64,8 @@ if [ "$username" = "" ]; then
 
 	clear
 	echo -e "\n"
-	echo "your system is set"
+	echo "your system is set 
+maybe you need change to $username and run startx"
 fi
 fi
 fi
