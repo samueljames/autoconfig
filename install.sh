@@ -61,11 +61,13 @@ if [ "$username" = "" ]; then
 	cp ./conf/aliedit/libaliedit64.so /home/$username/.mozilla/plugins/libaliedit64.so
 	cp ./conf/system/mkinitcpio.conf /etc/mkinitcpio.conf
 	cp ./conf/system/rc.conf /etc/rc.conf
-
+	
+	chown -R $username:$usernmae /home/$username/*
 	clear
 	echo -e "\n"
 	echo "your system is set 
 maybe you need change to $username and run startx"
+
 fi
 fi
 fi
