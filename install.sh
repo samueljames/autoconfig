@@ -59,8 +59,6 @@ if [ "$username" = "" ]; then
 
 	cp ./conf/init/.bashrc /home/$username/.bashrc
 
-	cp ./conf/init/.bash_profile  /home/$username/.bash_profile
-
 	cp ./conf/init/.Xresources /home/$username/.Xresources
 
 	cp ./conf/openbox/autostart /home/$username/.config/openbox/autostart
@@ -101,8 +99,6 @@ if [ "$username" = "" ]; then
 	chown -R $username:$usernmae /home/$username/pictures/.background/bg.jpg
 
 	chown -R $username:$usernmae /home/$username/.bashrc
-
-	chown -R $username:$usernmae /home/$username/.bash_profile
 
 	#clear and exit install
 	clear
