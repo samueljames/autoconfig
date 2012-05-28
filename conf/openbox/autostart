@@ -1,3 +1,5 @@
 feh --bg-scale ~/pictures/.background/bg.jpg &
 xrdb ~/.Xresources &
 xcompmgr &
+xset -b &
+source ~/.bashrc &
