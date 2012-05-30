@@ -29,7 +29,7 @@ if [ "$select" = "yes" ]; then
 
 read -p "do you have a user? (yes or no): " haveuser
 echo -e "\n"
-else  then
+else
 	echo "may be you need create a user"
 	exit 1
 fi
@@ -83,6 +83,12 @@ if [ "$username" = "" ]; then
 	chown -R $username:$usernmae /home/$username/.mozilla/plugins/libaliedit64.so
 
 	chown -R $username:$usernmae /home/$username/.xinitrc
+
+	chown -R $username:$usernmae /home/$username/git
+
+	chown -R $username:$usernmae /home/$username/downloads
+
+	chown -R $username:$usernmae /home/$username/pictures
 
 	chown -R $username:$usernmae /home/$username/.Xresources
 
