@@ -35,33 +35,37 @@ fi
 #alidit libpng debug
 ln -sf /usr/lib/libpng /usr/lib/libpng12.so.0
 
-#configure system
-read -p "do you need auto configure system? (yes or no): " select
-echo -e "\n"
-if [ "$select" = "yes" ]; then
-
 read -p "do you have a user? (yes or no): " haveuser
 echo -e "\n"
-else
-	echo "may be you need create a user"
-	echo -e "\n"
-	read -p "do you need create a user? " createuser
-	if [ "$createuser" = "yes" ]; then
-	useradd -m -s /bin/bash $username
-	exit 1
-fi
 
 if [ "$haveuser" = "yes" ]; then
 
 	read -p "user name is? [default is samuel]: " username
 	echo -e "\n"
 else
+	echo -e "\n"
+	read -p "do you need create a user? " createuser
+	if [ "$createuser" = "yes" ]; then
+		read -p "user name is? " username
+	useradd -m -s /bin/bash $username
+	echo -e "create user complete\n"
+	else
 	echo "you are using root"
 	username="root"
+fi
+fi
 fi
 
 if [ "$username" = "" ]; then
 	username="samuel"
+
+fi
+
+#configure system
+read -p "do you need auto configure system? (yes or no): " select
+echo -e "\n"
+
+if [ "$select" = "yes" ]; then
 
 	#initialization user space
 	mkdir /home/$username/git 
@@ -73,7 +77,7 @@ if [ "$username" = "" ]; then
 	mkdir -p /home/$username/.config/openbox
 
 	#configure system
-	cp ./conf/init/.xinitrc /home/$username/.xinitrc
+	cp ./conf/init/.xinitrauto c /home/$username/.xinitrc
 
 	cp ./conf/init/.bashrc /home/$username/.bashrc
 
@@ -129,7 +133,6 @@ if [ "$username" = "" ]; then
 	echo -e "\n"
 	echo "your system is configure
 maybe you need change to $username and run startx"
-
-fi
-fi
+else
+	echo "you are not auto configure system"
 fi
