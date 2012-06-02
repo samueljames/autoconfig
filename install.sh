@@ -15,16 +15,21 @@ if [ $install != "yes" ]; then
 	exit 1
 else
 
+
 pacman -Syu xorg xorg-xinit xf86-video-nouveau alsa-utils firefox \
 firefox-i18n-zh-cn openbox ibus-pinyin openssh xcompmgr rxvt-unicode \
 flashplugin wqy-zenhei ttf-dejavu ttf-arphic-uming vim feh git sudo \
 scrot gimp
 
+fi
+
 #check install base applications
-if [ -f /var/cache/pacman/pkg/openbox*.a ]; then
-	echo "you install base applications"
+if [ -f /var/cache/pacman/pkg/openbox*.tar.xz ]; then
+	echo "you already install base applications"
+	echo -e "\n"
 else
 	echo "you need install base applications"
+	exit 1
 fi
 
 #alidit libpng debug
@@ -51,7 +56,7 @@ if [ "$haveuser" = "yes" ]; then
 	read -p "user name is? [default is samuel]: " username
 	echo -e "\n"
 else
-	echo "you are using root,maybe you need run startx"
+	echo "you are using root"
 	username="root"
 fi
 
@@ -122,9 +127,11 @@ if [ "$username" = "" ]; then
 	#clear and exit install
 	clear
 	echo -e "\n"
-	echo "your system is set 
+	echo "your system is configure
 maybe you need change to $username and run startx"
 
 fi
 fi
 fi
+
+
