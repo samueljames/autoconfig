@@ -1,7 +1,8 @@
 #!/bin/bash
 #code by Samuel James
+#copyright GPLv3
 
-if [ `id -u` != "0" ]; then
+if [ $(id -u) != "0" ]; then
 	echo "you are not root,please change to root and run this script"
  	exit 1
 else
@@ -19,6 +20,13 @@ firefox-i18n-zh-cn openbox ibus-pinyin openssh xcompmgr rxvt-unicode \
 flashplugin wqy-zenhei ttf-dejavu ttf-arphic-uming vim feh git sudo \
 scrot gimp
 
+#check install base applications
+if [ -f /var/cache/pacman/pkg/openbox*.a ]; then
+	echo "you install base applications"
+else
+	echo "you need install base applications"
+fi
+
 #alidit libpng debug
 ln -sf /usr/lib/libpng /usr/lib/libpng12.so.0
 
@@ -31,10 +39,15 @@ read -p "do you have a user? (yes or no): " haveuser
 echo -e "\n"
 else
 	echo "may be you need create a user"
+	echo -e "\n"
+	read -p "do you need create a user? " createuser
+	if [ "$createuser" = "yes" ]; then
+	useradd -m -s /bin/bash $username
 	exit 1
 fi
 
 if [ "$haveuser" = "yes" ]; then
+
 	read -p "user name is? [default is samuel]: " username
 	echo -e "\n"
 else
