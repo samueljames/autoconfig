@@ -3,3 +3,4 @@ xrdb ~/.Xresources &
 xcompmgr &
 xset -b &
 source ~/.bashrc &
+urxvtd &
