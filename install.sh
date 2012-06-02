@@ -133,5 +133,3 @@ maybe you need change to $username and run startx"
 fi
 fi
 fi
-
-
