@@ -19,7 +19,7 @@ else
 pacman -Syu xorg xorg-xinit xf86-video-nouveau alsa-utils firefox \
 firefox-i18n-zh-cn openbox ibus-pinyin openssh xcompmgr rxvt-unicode \
 flashplugin wqy-zenhei ttf-dejavu ttf-arphic-uming vim feh git sudo \
-scrot gimp openntpd
+scrot gimp openntpd slim slim-themes conky
 
 fi
 
@@ -101,9 +101,13 @@ if [ "$select" = "yes" ]; then
 
 	cp ./conf/aliedit/libaliedit64.so /home/$username/.mozilla/plugins/libaliedit64.so
 
+	cp ./conf/init/.conkyrc  /home/$username/.conkyrc
+
 	cp ./conf/system/mkinitcpio.conf /etc/mkinitcpio.conf
 
 	cp ./conf/system/rc.conf /etc/rc.conf
+
+	cp ./conf/system/slim.conf /etc/slim.conf
 
 	#change file to user	
 	chown -R $username:$usernmae /home/$username/.mozilla/plugins/libaliedit64.so
