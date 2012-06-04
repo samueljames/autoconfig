@@ -7,9 +7,16 @@ if [ $(id -u) != "0" ]; then
  	exit 1
 else
 
-select var in "debug no run it" "install base applications" "just fix bug" "create a user" "auto configure system" "clear and exit install"; do
+select var in "no run it,debug" "install base applications" "just fix bug" "create a user" "auto configure system" "clear and exit install"; do
+
+	while [ "$return" ]; do
+	if [ "$return" = "0" ]; then
+
 	break
+fi
 done
+done
+
 #install application 
 if [ $var != "install base applications" ]; then
 	echo "you need install base applications"
@@ -129,5 +136,6 @@ fi
 	clear
 	echo "your system is configure
 maybe you need change to $username and run startx"
+	return="0"
 fi
 fi
