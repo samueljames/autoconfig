@@ -2,6 +2,8 @@
 #code by Samuel James
 #copyright GPLv3
 
+#this is a old install script
+
 if [ $(id -u) != "0" ]; then
 	echo "you are not root,please change to root and run this script"
  	exit 1
