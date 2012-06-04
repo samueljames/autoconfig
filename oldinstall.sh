@@ -7,52 +7,69 @@ if [ $(id -u) != "0" ]; then
  	exit 1
 else
 
-select selectd in "install-base-applications" "just-fix-bug" "create-a-user" "auto-configure-system" "clear-and-exit-install"; do
-
-	case $selectd in
-
-		install-base-applications)
-
 #install application 
+read -p "install base application? (yes or no): " install
+echo -e "\n"
+if [ $install != "yes" ]; then
+	echo "you need install base applications"
+	exit 1
+else
+
+
 pacman -Syu xorg xorg-xinit xf86-video-nouveau alsa-utils firefox \
 firefox-i18n-zh-cn openbox ibus-pinyin openssh xcompmgr rxvt-unicode \
 flashplugin wqy-zenhei ttf-dejavu ttf-arphic-uming vim feh git sudo \
-scrot gimp openntpd slim slim-themes conky sysstat unrar unzip
+scrot gimp openntpd slim slim-themes conky
 
-#check install
+fi
+
+#check install base applications
 if [ -f /var/cache/pacman/pkg/openbox*.tar.xz ]; then
 	echo "you already install base applications"
+	echo -e "\n"
 else
 	echo "you need install base applications"
 	exit 1
 fi
-;;
 
-	just-fix-bug)
-#fix bug
-#alidit libpng fixbug
+#alidit libpng debug
 ln -sf /usr/lib/libpng /usr/lib/libpng12.so.0
 
 #touch xorg configure file
 Xorg -configure
 mv /root/xorg.conf.new /etc/X11/xorg.conf.d/xorg.conf
 
-;;
+read -p "do you have a user? (yes or no): " haveuser
+echo -e "\n"
 
-	have-a-user)
-#check have a user
+if [ "$haveuser" = "yes" ]; then
+
 	read -p "user name is? [default is samuel]: " username
+	echo -e "\n"
+else
+	echo -e "\n"
+	read -p "do you need create a user? " createuser
+	if [ "$createuser" = "yes" ]; then
+		read -p "user name is? " username
+	useradd -m -s /bin/bash $username
+	echo -e "create user complete\n"
+	else
+	echo "you are using root"
+	username="root"
+fi
+fi
+fi
 
 if [ "$username" = "" ]; then
 	username="samuel"
-	useradd -m -s /bin/bash $username
-	echo "create user complete"
 
 fi
-;;
 
-	auto-configure-system)
-#auto configure system
+#configure system
+read -p "do you need auto configure system? (yes or no): " select
+echo -e "\n"
+
+if [ "$select" = "yes" ]; then
 
 	#initialization user space
 	mkdir /home/$username/git 
@@ -64,7 +81,7 @@ fi
 	mkdir -p /home/$username/.config/openbox
 
 	#configure system
-	cp ./conf/init/.xinitrc /home/$username/.xinitrc
+	cp ./conf/init/.xinitrauto c /home/$username/.xinitrc
 
 	cp ./conf/init/.bashrc /home/$username/.bashrc
 
@@ -118,15 +135,12 @@ fi
 	chown -R $username:$usernmae /home/$username/pictures/.background/bg.jpg
 
 	chown -R $username:$usernmae /home/$username/.bashrc
-;;
 
-	clear-and-exit-install)
 	#clear and exit install
 	clear
+	echo -e "\n"
 	echo "your system is configure
 maybe you need change to $username and run startx"
-
-;;
-
-*) echo "error";exit 1;;
-esac
+else
+	echo "you are not auto configure system"
+fi
