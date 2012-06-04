@@ -18,11 +18,7 @@ done
 done
 
 #install application 
-if [ $var != "install base applications" ]; then
-	echo "you need install base applications"
-	exit 1
-else
-
+if [ $var = "install base applications" ]; then
 pacman -Syu xorg xorg-xinit xf86-video-nouveau alsa-utils firefox \
 firefox-i18n-zh-cn openbox ibus-pinyin openssh xcompmgr rxvt-unicode \
 flashplugin wqy-zenhei ttf-dejavu ttf-arphic-uming vim feh git sudo \
