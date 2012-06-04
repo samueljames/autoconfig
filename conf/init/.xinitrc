@@ -1,1 +1,1 @@
-exec ck-lanch-session openbox-session
+exec openbox-session
