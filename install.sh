@@ -57,6 +57,11 @@ fi
 
 		auto-configure-system)
 #auto configure system
+if [ "$username" = "" ]; then
+	username="samuel"
+        useradd -m -s /bin/bash $username
+
+fi
 
 #initialization user space
 mkdir /home/$username/git 
@@ -108,6 +113,8 @@ chown -R $username:$usernmae /home/$username/downloads
 chown -R $username:$usernmae /home/$username/pictures
 
 chown -R $username:$usernmae /home/$username/.Xresources
+
+chown -R $username:$usernmae /home/$username/.config
 
 chown -R $username:$usernmae /home/$username/.config/openbox/autostart
 
