@@ -129,6 +129,15 @@ chown -R $username:$usernmae /home/$username/.vimrc
 chown -R $username:$usernmae /home/$username/pictures/.background/bg.jpg
 
 chown -R $username:$usernmae /home/$username/.bashrc
+
+#add user to group
+gpasswd -a $username disk
+gpasswd -a $username wheel
+gpasswd -a $username network
+gpasswd -a $username video
+gpasswd -a $username audio
+gpasswd -a $username storage
+gpasswd -a $username dbus
 ;;
 
 		clear-and-exit-install)
