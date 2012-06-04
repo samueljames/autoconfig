@@ -4,7 +4,6 @@
 
 <menu id="root-menu" label="Openbox 3">
   <separator label="忆忧愁。" />
-  <menu id="system-menu"/>
   <item label="退出">
     <action name="Exit">
       <prompt>yes</prompt>
