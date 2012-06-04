@@ -2,9 +2,13 @@ my archlinux auto config script
 
 using openbox and xcompmgr
 
-key:
+hot key:
 
 window+f run firefox
 window+t run urxvt
 window+g run gimp
 window+s run scrot
+
+auto fix archlinux bug , need select 2
+
+auto uninstall , need select 6
