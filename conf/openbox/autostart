@@ -1,6 +1,9 @@
-feh --bg-scale ~/pictures/.background/bg.jpg &
-xrdb ~/.Xresources &
-xcompmgr &
-xset -b &
-source ~/.bashrc &
-urxvtd &
+conky
+feh --bg-scale ~/pictures/.background/bg.jpg
+xrdb ~/.Xresources
+xcompmgr
+xset -b
+xset -dpms
+xset s off
+source ~/.bashrc
+urxvtd
