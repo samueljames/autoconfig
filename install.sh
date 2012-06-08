@@ -10,7 +10,8 @@ else
 applications="xorg xorg-xinit xf86-video-nouveau alsa-utils firefox \
 firefox-i18n-zh-cn openbox ibus-pinyin openssh xcompmgr rxvt-unicode \
 flashplugin wqy-zenhei ttf-dejavu ttf-arphic-uming vim feh git sudo \
-scrot gimp openntpd slim slim-themes conky xscreensaver sysstat unrar unzip"
+scrot gimp openntpd slim slim-themes conky xscreensaver sysstat unrar \
+unzip iftop iotop"
 
 select selectd in "install-base-applications" "just-fix-bug" \
 "create-a-user" "auto-configure-system" \
@@ -21,7 +22,6 @@ select selectd in "install-base-applications" "just-fix-bug" \
 		install-base-applications)
 
 #install application 
-
 pacman -Syu $applications
 
 #check install
