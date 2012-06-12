@@ -7,4 +7,3 @@ xset -dpms &
 xset s off &
 source ~/.bashrc &
 urxvtd &
-xscreensaver &
