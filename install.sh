@@ -36,7 +36,8 @@ fi
 		just-fix-bug)
 #fix bug
 #alidit libpng fixbug
-ln -sf /usr/lib/libpng /usr/lib/libpng12.so.0
+ln -sf /usr/lib/libpng15.so.15.10.0 /usr/lib/libpng12.so.0
+./config/aliedit/aliedit.sh
 
 #touch xorg configure file
 Xorg -configure
@@ -69,6 +70,8 @@ mkdir /home/$username/git
 mkdir /home/$username/downloads 
 
 mkdir -p /home/$username/pictures/.background
+
+mkdir -p /home/$username/.mozilla/plugins/
 
 mkdir -p /home/$username/.config/openbox
 
