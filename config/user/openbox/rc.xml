@@ -316,6 +316,16 @@
     </action>
   </keybind>
 
+  <keybind key="W-c">
+    <action name="Execute">
+      <startupnotify>
+        <enabled>true</enabled>
+        <name>Chromium</name>
+      </startupnotify>
+      <command>chromium</command>
+    </action>
+  </keybind>
+
   <keybind key="W-s">
     <action name="Execute">
       <startupnotify>
@@ -752,7 +762,6 @@
 
   # end of the example
 -->
-
 
 <application class="URxvt">
 
