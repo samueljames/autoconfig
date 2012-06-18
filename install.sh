@@ -10,8 +10,7 @@ else
 applications="xorg xorg-xinit xf86-video-nouveau alsa-utils firefox \
 firefox-i18n-zh-cn openbox ibus-pinyin openssh xcompmgr rxvt-unicode \
 flashplugin wqy-zenhei ttf-dejavu ttf-arphic-uming vim feh git sudo \
-scrot gimp openntpd slim slim-themes conky xscreensaver sysstat unrar \
-unzip iftop iotop"
+scrot gimp slim slim-themes sysstat unrar unzip"
 
 select selectd in "install-base-applications" "just-fix-bug" \
 "create-a-user" "auto-configure-system" \
@@ -96,11 +95,7 @@ cp ./conf/vim/.vimrc /home/$username/.vimrc
 
 cp ./conf/aliedit/libaliedit64.so /home/$username/.mozilla/plugins/libaliedit64.so
 
-cp ./conf/init/.conkyrc  /home/$username/.conkyrc
-
 cp ./conf/system/mkinitcpio.conf /etc/mkinitcpio.conf
-
-cp ./conf/system/rc.conf /etc/rc.conf
 
 cp ./conf/system/slim.conf /etc/slim.conf
 
