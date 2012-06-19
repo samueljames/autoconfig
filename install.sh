@@ -36,7 +36,6 @@ fi
 #fix bug
 #alidit libpng fixbug
 ln -sf /usr/lib/libpng15.so.15.10.0 /usr/lib/libpng12.so.0
-./config/aliedit/aliedit.sh
 
 #touch xorg configure file
 Xorg -configure
@@ -75,29 +74,29 @@ mkdir -p /home/$username/.mozilla/plugins/
 mkdir -p /home/$username/.config/openbox
 
 #configure system
-cp ./conf/init/.xinitrc /home/$username/.xinitrc
+cp ./config/user/init/.xinitrc /home/$username/.xinitrc
 
-cp ./conf/init/.bashrc /home/$username/.bashrc
+#cp ./config/user/init/.bashrc /home/$username/.bashrc
 
-cp ./conf/init/.Xresources /home/$username/.Xresources
+cp ./config/user/init/.Xresources /home/$username/.Xresources
 
-cp ./conf/openbox/autostart /home/$username/.config/openbox/autostart
+cp ./config/user/openbox/autostart /home/$username/.config/openbox/autostart
 
-cp ./conf/openbox/environment /home/$username/.config/openbox/environment
+cp ./config/user/openbox/environment /home/$username/.config/openbox/environment
 
-cp ./conf/openbox/menu.xml /home/$username/.config/openbox/menu.xml
+cp ./config/user/openbox/menu.xml /home/$username/.config/openbox/menu.xml
 
-cp ./conf/openbox/rc.xml /home/$username/.config/openbox/rc.xml
+#cp ./config/user/openbox/rc.xml /home/$username/.config/openbox/rc.xml
 
-cp ./img/pictures/.background/bg.jpg /home/$username/pictures/.background/bg.jpg
+cp ./config/images/pictures/.background/bg.jpg /home/$username/pictures/.background/bg.jpg
 
-cp ./conf/vim/.vimrc /home/$username/.vimrc
+cp ./config/user/vim/.vimrc /home/$username/.vimrc
 
-cp ./conf/aliedit/libaliedit64.so /home/$username/.mozilla/plugins/libaliedit64.so
+cp ./config/user/aliedit/libaliedit64.so /home/$username/.mozilla/plugins/libaliedit64.so
 
-cp ./conf/system/mkinitcpio.conf /etc/mkinitcpio.conf
+cp ./config/system/slim.conf /etc/slim.conf
 
-cp ./conf/system/slim.conf /etc/slim.conf
+cp ./config/system/inittab /etc/inittab
 
 #change file to user	
 chown -R $username:$usernmae /home/$username/.mozilla/plugins/libaliedit64.so
@@ -126,7 +125,7 @@ chown -R $username:$usernmae /home/$username/.vimrc
 
 chown -R $username:$usernmae /home/$username/pictures/.background/bg.jpg
 
-chown -R $username:$usernmae /home/$username/.bashrc
+#chown -R $username:$usernmae /home/$username/.bashrc
 
 #add user to group
 gpasswd -a $username disk
