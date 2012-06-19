@@ -35,7 +35,7 @@ fi
 		just-fix-bug)
 #fix bug
 #alidit libpng fixbug
-ln -sf /usr/lib/libpng15.so.15.10.0 /usr/lib/libpng12.so.0
+ln -sf /usr/lib/libpng.so /usr/lib/libpng12.so.0
 
 #touch xorg configure file
 Xorg -configure
