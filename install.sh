@@ -21,7 +21,7 @@ select selectd in "install-base-applications" "just-fix-bug" \
 		install-base-applications)
 
 #install application 
-pacman -Syu $applications
+pacman -Syu --noconfirm $applications
 
 #check install
 if [ -f /var/cache/pacman/pkg/openbox*.tar.xz ]; then
@@ -149,7 +149,7 @@ exit 1
 uninstall)
 	read -p "warning! you sure uninstall all install application?(yes or no) " uninstall
 	if [ "$uninstall" = "yes" ]; then
-	pacman -Rscd $applications
+	pacman -Rscd --noconfirm $applications
 	echo "uninstall complete"
 else
 	echo "not uninstall"
