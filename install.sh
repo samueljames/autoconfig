@@ -129,11 +129,17 @@ chown -R $username:$usernmae /home/$username/pictures/.background/bg.jpg
 
 #add user to group
 gpasswd -a $username disk
+
 gpasswd -a $username wheel
+
 gpasswd -a $username network
+
 gpasswd -a $username video
+
 gpasswd -a $username audio
+
 gpasswd -a $username storage
+
 gpasswd -a $username dbus
 ;;
 
@@ -156,7 +162,9 @@ else
 fi
 ;;
 
-*) echo "error! not a number";exit 1;;
+*) echo "error! not a number"
+	exit 1
+;;
 
 esac
 done
