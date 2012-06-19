@@ -86,7 +86,7 @@ cp ./config/user/openbox/environment /home/$username/.config/openbox/environment
 
 cp ./config/user/openbox/menu.xml /home/$username/.config/openbox/menu.xml
 
-#cp ./config/user/openbox/rc.xml /home/$username/.config/openbox/rc.xml
+cp ./config/user/openbox/rc.xml /home/$username/.config/openbox/rc.xml
 
 cp ./config/images/pictures/.background/bg.jpg /home/$username/pictures/.background/bg.jpg
 
