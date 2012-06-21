@@ -7,10 +7,10 @@ if [ $(id -u) != "0" ]; then
  	exit 1
 else
 
-applications="xorg xorg-xinit xf86-video-nouveau alsa-utils firefox \
-firefox-i18n-zh-cn openbox ibus-pinyin openssh xcompmgr rxvt-unicode \
-flashplugin wqy-zenhei ttf-dejavu ttf-arphic-uming vim feh git sudo \
-scrot gimp slim slim-themes sysstat unrar unzip"
+applications="xorg xorg-xinit xf86-video-nouveau alsa-utils \
+chromium openbox ibus-pinyin openssh xcompmgr rxvt-unicode \
+flashplugin wqy-zenhei ttf-dejavu ttf-arphic-uming vim feh \ 
+git sudo scrot gimp slim slim-themes bash-completion"
 
 select selectd in "install-base-applications" "just-fix-bug" \
 "create-a-user" "auto-configure-system" \
@@ -69,8 +69,6 @@ mkdir /home/$username/downloads
 
 mkdir -p /home/$username/pictures/.background
 
-mkdir -p /home/$username/.mozilla/plugins/
-
 mkdir -p /home/$username/.config/openbox
 
 #configure system
@@ -92,15 +90,11 @@ cp ./config/images/pictures/.background/bg.jpg /home/$username/pictures/.backgro
 
 cp ./config/user/vim/.vimrc /home/$username/.vimrc
 
-cp ./config/user/aliedit/libaliedit64.so /home/$username/.mozilla/plugins/libaliedit64.so
-
 cp ./config/system/slim.conf /etc/slim.conf
 
 cp ./config/system/inittab /etc/inittab
 
 #change file to user	
-chown -R $username:$usernmae /home/$username/.mozilla/plugins/libaliedit64.so
-
 chown -R $username:$usernmae /home/$username/.xinitrc
 
 chown -R $username:$usernmae /home/$username/git
