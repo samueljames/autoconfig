@@ -306,16 +306,6 @@
     </action>
   </keybind>
 
-  <keybind key="W-f">
-    <action name="Execute">
-      <startupnotify>
-        <enabled>true</enabled>
-        <name>Firefox</name>
-      </startupnotify>
-      <command>firefox</command>
-    </action>
-  </keybind>
-
   <keybind key="W-c">
     <action name="Execute">
       <startupnotify>
