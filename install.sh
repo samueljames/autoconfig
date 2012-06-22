@@ -8,8 +8,8 @@ if [ $(id -u) != "0" ]; then
 else
 
 applications="xorg xorg-xinit xf86-video-nouveau alsa-utils \
-chromium openbox ibus-pinyin openssh xcompmgr rxvt-unicode \
-flashplugin wqy-zenhei ttf-dejavu ttf-arphic-uming vim feh \ 
+chromium openbox ibus-pinyin openssh openntpd xcompmgr rxvt-unicode \
+flashplugin wqy-zenhei ttf-dejavu ttf-arphic-uming vim feh \
 git sudo scrot gimp slim slim-themes bash-completion"
 
 select selectd in "install-base-applications" "just-fix-bug" \
