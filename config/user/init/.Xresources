@@ -1,6 +1,10 @@
+#set terminal color
 urxvt.depth:32
 urxvt.background:[50]#000000
 urxvt.foreground:#ffffff
+#set terminal font
 urxvt.font:xft:dejavu sans mono:size=18
+#set not scrollbar
 urxvt.scrollBar:false
+#set not scroll buffer
 urxvt.scrollWithBuffer:true
