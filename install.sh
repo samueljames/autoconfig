@@ -74,7 +74,7 @@ mkdir -p /home/$username/.config/openbox
 #configure system
 cp ./config/user/init/.xinitrc /home/$username/.xinitrc
 
-#cp ./config/user/init/.bashrc /home/$username/.bashrc
+cp ./config/user/init/.bashrc /home/$username/.bashrc
 
 cp ./config/user/init/.Xresources /home/$username/.Xresources
 
@@ -119,7 +119,7 @@ chown -R $username:$usernmae /home/$username/.vimrc
 
 chown -R $username:$usernmae /home/$username/pictures/.background/bg.jpg
 
-#chown -R $username:$usernmae /home/$username/.bashrc
+chown -R $username:$usernmae /home/$username/.bashrc
 
 #add user to group
 gpasswd -a $username disk
