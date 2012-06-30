@@ -7,3 +7,6 @@ PS1='[\u@\h \W]\$ '
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
+
+xset b off
+xset s off
