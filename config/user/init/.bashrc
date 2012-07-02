@@ -10,3 +10,4 @@ export QT_IM_MODULE=ibus
 
 xset b off
 xset s off
+xset -dpms
