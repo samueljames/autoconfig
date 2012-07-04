@@ -63,7 +63,7 @@ if [ "$username" = "" ]; then
 fi
 
 #initialization user space
-mkdir /home/$username/git 
+mkdir /home/$username/sources
 
 mkdir /home/$username/downloads 
 
@@ -97,7 +97,7 @@ cp ./config/system/inittab /etc/inittab
 #change file to user	
 chown -R $username:$usernmae /home/$username/.xinitrc
 
-chown -R $username:$usernmae /home/$username/git
+chown -R $username:$usernmae /home/$username/sources
 
 chown -R $username:$usernmae /home/$username/downloads
 
