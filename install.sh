@@ -67,8 +67,6 @@ mkdir /home/$username/sources
 
 mkdir /home/$username/downloads 
 
-mkdir -p /home/$username/pictures/.background
-
 mkdir -p /home/$username/.config/openbox
 
 #configure system
@@ -86,7 +84,7 @@ cp ./config/user/openbox/menu.xml /home/$username/.config/openbox/menu.xml
 
 cp ./config/user/openbox/rc.xml /home/$username/.config/openbox/rc.xml
 
-cp ./config/images/pictures/.background/bg.jpg /home/$username/pictures/.background/bg.jpg
+cp -r ./config/images/pictures/.background/bg.jpg /home/$username/pictures/.background/bg.jpg
 
 cp ./config/user/vim/.vimrc /home/$username/.vimrc
 
