@@ -1,7 +1,26 @@
-urxvt.depth:32
-urxvt.background:[50]#000000
+!urxvt color configure
+
+!urxvt.depth:32
+
+urxvt.background:#3C3C3C
 urxvt.foreground:#ffffff
+urxvt.colorBD:Gray95
+urxvt.colorUL:Green
+urxvt.color1:Red2
+urxvt.color4:RoyalBlue
+urxvt.color5:Magenta2
+urxvt.color8:Gray50
+urxvt.color10:Green2
+urxvt.color12:DodgerBlue
+urxvt.color14:Cyan2
+urxvt.color15:Gray95
+
+!urxvt font configure
 urxvt.font:xft:dejavu sans mono:size=18
+
+!urxvt scrollbar configure
 urxvt.scrollBar:false
 urxvt.scrollWithBuffer:true
+
+!urxvt input configure
 urxvt.preeditType:Root 
