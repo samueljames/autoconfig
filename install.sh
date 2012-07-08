@@ -8,7 +8,7 @@ if [ $(id -u) != "0" ]; then
 else
 
 applications="xorg xorg-xinit xf86-video-nouveau alsa-utils \
-chromium openbox ibus-pinyin openssh openntpd xcompmgr rxvt-unicode \
+chromium openbox ibus-pinyin openssh openntpd rxvt-unicode \
 flashplugin wqy-zenhei ttf-dejavu ttf-arphic-uming vim feh \
 git sudo scrot gimp slim slim-themes bash-completion"
 
