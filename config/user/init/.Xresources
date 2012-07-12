@@ -1,8 +1,6 @@
 !urxvt color configure
-
-!urxvt.depth:32
-
-urxvt.background:#3C3C3C
+urxvt.depth:32
+urxvt.background:#000000
 urxvt.foreground:#ffffff
 urxvt.colorBD:Gray95
 urxvt.colorUL:Green
