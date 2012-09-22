@@ -1,10 +1,3 @@
-old archlinux auto config script
+samuel james 
 
-using openbox and urxvt
-
-hot key:
-
-window+f run chromium
-window+t run urxvt
-window+g run gimp
-window+s run scrot
+archlinux auto config script
