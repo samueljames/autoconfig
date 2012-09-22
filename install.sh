@@ -3,11 +3,11 @@
 #copyright GPLv3
 
 if [ $(id -u) != "0" ]; then
-	echo "you are not root,please change to root and run this script"
+	echo "you are not root,please change to root and again run this script"
  	exit 1
 else
 
-applications="xorg xorg-xinit xf86-video-nouveau alsa-utils \
+applications="xorg xorg-xinit alsa-utils aria2 lynx\
 chromium openbox ibus-pinyin openssh openntpd rxvt-unicode \
 flashplugin wqy-zenhei ttf-dejavu ttf-arphic-uming vim feh \
 git xcompmgr sudo scrot gimp slim slim-themes bash-completion"
@@ -36,10 +36,6 @@ fi
 #fix bug
 #alidit libpng fixbug
 ln -sf /usr/lib/libpng.so /usr/lib/libpng12.so.0
-
-#touch xorg configure file
-Xorg -configure
-mv /root/xorg.conf.new /etc/X11/xorg.conf.d/xorg.conf
 ;;
 
 		create-a-user)
@@ -67,6 +63,8 @@ mkdir /home/$username/sources
 
 mkdir /home/$username/downloads 
 
+mkdir -p /home/$username/pictures/.background
+
 mkdir -p /home/$username/.config/openbox
 
 #configure system
@@ -86,7 +84,7 @@ cp ./config/user/openbox/rc.xml /home/$username/.config/openbox/rc.xml
 
 cp -r ./config/images/pictures/.background/bg.jpg /home/$username/pictures/.background/bg.jpg
 
-cp ./config/user/vim/.vimrc /home/$username/.vimrc
+cp ./config/user/init/.vimrc /home/$username/.vimrc
 
 cp ./config/system/slim.conf /etc/slim.conf
 
@@ -137,7 +135,7 @@ gpasswd -a $username dbus
 
 		clear-and-exit-install)
 
-#clear and exit install
+#clear and over install
 clear
 echo "your system is configure
 maybe you need change to $username and run startx"
