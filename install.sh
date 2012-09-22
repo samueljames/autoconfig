@@ -3,7 +3,7 @@
 #copyright GPLv3
 
 if [ $(id -u) != "0" ]; then
-	echo "you are not root,please change to root and again run this script"
+	echo "you are not root,please change to root and run again this script"
  	exit 1
 else
 
