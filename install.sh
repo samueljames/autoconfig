@@ -7,10 +7,8 @@ if [ $(id -u) != "0" ]; then
  	exit 1
 else
 
-applications="xorg xorg-xinit alsa-utils aria2 lynx\
-chromium openbox ibus-pinyin openssh openntpd rxvt-unicode \
-flashplugin wqy-zenhei ttf-dejavu ttf-arphic-uming vim feh \
-git xcompmgr sudo scrot gimp slim slim-themes bash-completion"
+applications="xorg xorg-xinit alsa-utils openbox ntpd wqy-zenhei ttf-dejavu ttf-arphic-uming \ 
+aria2 chromium openssh  rxvt-unicode flashplugin vim feh sudo scrot \"
 
 select selectd in "install-base-applications" "just-fix-bug" \
 "create-a-user" "auto-configure-system" \
