@@ -8,9 +8,9 @@ if [ $(id -u) != "0" ]; then
 else
 
 applications="xorg xorg-xinit alsa-utils openbox ntpd wqy-microhei ttf-dejavu ttf-arphic-uming \ 
-aria2 chromium openssh  rxvt-unicode flashplugin vim feh sudo scrot \"
+aria2 chromium openssh  rxvt-unicode flashplugin vim feh sudo scrot"
 
-select selectd in "install-base-applications" "just-fix-bug" \
+select selectd in "select-image" "install-base-applications" "just-fix-bug" \
 "create-a-user" "auto-configure-system" \
 "clear-and-exit-install" "uninstall"; do
 
@@ -110,22 +110,6 @@ chown -R $username:$usernmae /home/$username/.vimrc
 chown -R $username:$usernmae /home/$username/pictures/.background/bg.jpg
 
 chown -R $username:$usernmae /home/$username/.bashrc
-
-#add user to group
-#maybe don't need
-#gpasswd -a $username disk
-#
-#gpasswd -a $username wheel
-#
-#gpasswd -a $username network
-#
-#gpasswd -a $username video
-#
-#gpasswd -a $username audio
-#
-#gpasswd -a $username storage
-#
-#gpasswd -a $username dbus
 ;;
 
 		clear-and-exit-install)
@@ -137,7 +121,7 @@ exit 1
 ;;
 
 uninstall)
-	read -p "warning! you sure uninstall all install application?(yes or no) " uninstall
+    read -p "warning! you sure uninstall all install application?(yes or no) " uninstall
 	if [ "$uninstall" = "yes" ]; then
 	pacman -Rscd --noconfirm $applications
 	echo "uninstall complete"
@@ -146,7 +130,8 @@ else
 fi
 ;;
 
-*) echo "error! not a number"
+*) 
+    echo "error! not a number"
 	exit 1
 ;;
 
