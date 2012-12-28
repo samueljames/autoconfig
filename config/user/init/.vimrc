@@ -62,6 +62,9 @@ endif
 " color select
 colorscheme desert
 
-" python indent
+" python configure 
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
+set expandtab
+set number
