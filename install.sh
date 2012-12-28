@@ -7,10 +7,10 @@ if [ $(id -u) != "0" ]; then
  	exit 1
 else
 
-applications="xorg xorg-xinit alsa-utils openbox ntpd wqy-microhei ttf-dejavu ttf-arphic-uming \ 
+applications="xorg xorg-xinit alsa-utils openbox ntp wqy-microhei ttf-dejavu ttf-arphic-uming
 aria2 chromium openssh  rxvt-unicode flashplugin vim feh sudo scrot"
 
-select selectd in "select-image" "install-base-applications" "just-fix-bug" \
+select selectd in "install-base-applications" "just-fix-bug" \
 "create-a-user" "auto-configure-system" \
 "clear-and-exit-install" "uninstall"; do
 
@@ -121,7 +121,7 @@ exit 1
 ;;
 
 uninstall)
-    read -p "warning! you sure uninstall all install application?(yes or no) " uninstall
+    read -p "warning! you sure uninstall $applications? (yes or no) " uninstall
 	if [ "$uninstall" = "yes" ]; then
 	pacman -Rscd --noconfirm $applications
 	echo "uninstall complete"
