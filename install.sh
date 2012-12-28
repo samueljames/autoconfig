@@ -7,7 +7,7 @@ if [ $(id -u) != "0" ]; then
  	exit 1
 else
 
-applications="xorg xorg-xinit alsa-utils openbox ntpd wqy-zenhei ttf-dejavu ttf-arphic-uming \ 
+applications="xorg xorg-xinit alsa-utils openbox ntpd wqy-microhei ttf-dejavu ttf-arphic-uming \ 
 aria2 chromium openssh  rxvt-unicode flashplugin vim feh sudo scrot \"
 
 select selectd in "install-base-applications" "just-fix-bug" \
@@ -84,10 +84,6 @@ cp -r ./config/images/pictures/.background/bg.jpg /home/$username/pictures/.back
 
 cp ./config/user/init/.vimrc /home/$username/.vimrc
 
-cp ./config/system/slim.conf /etc/slim.conf
-
-cp ./config/system/inittab /etc/inittab
-
 #change file to user	
 chown -R $username:$usernmae /home/$username/.xinitrc
 
@@ -116,27 +112,27 @@ chown -R $username:$usernmae /home/$username/pictures/.background/bg.jpg
 chown -R $username:$usernmae /home/$username/.bashrc
 
 #add user to group
-gpasswd -a $username disk
-
-gpasswd -a $username wheel
-
-gpasswd -a $username network
-
-gpasswd -a $username video
-
-gpasswd -a $username audio
-
-gpasswd -a $username storage
-
-gpasswd -a $username dbus
+#maybe don't need
+#gpasswd -a $username disk
+#
+#gpasswd -a $username wheel
+#
+#gpasswd -a $username network
+#
+#gpasswd -a $username video
+#
+#gpasswd -a $username audio
+#
+#gpasswd -a $username storage
+#
+#gpasswd -a $username dbus
 ;;
 
 		clear-and-exit-install)
 
 #clear and over install
 clear
-echo "your system is configure
-maybe you need change to $username and run startx"
+echo "system configure complete"
 exit 1
 ;;
 
