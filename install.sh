@@ -34,6 +34,7 @@ fi
 #fix bug
 #alidit libpng fixbug
 ln -sf /usr/lib/libpng.so /usr/lib/libpng12.so.0
+echo "fix bug complete"
 ;;
 
 		create-a-user)
@@ -43,8 +44,8 @@ read -p "user name is? [default is samuel]: " username
 if [ "$username" = "" ]; then
 	username="samuel"
 	useradd -m -s /bin/bash $username
+    login -n $username
 	echo "create user complete"
-
 fi
 ;;
 
