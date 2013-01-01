@@ -1,3 +1,5 @@
 feh --bg-scale ~/pictures/.background/bg.jpg &
 xrdb ~/.Xresources &
 urxvtd &
+xset b off
+synclienttouchpadoff=1
