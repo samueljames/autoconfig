@@ -44,7 +44,6 @@ read -p "user name is? [default is samuel]: " username
 if [ "$username" = "" ]; then
 	username="samuel"
 	useradd -m -s /bin/bash $username
-    login -n $username
 	echo "create user complete"
 fi
 ;;
@@ -56,6 +55,30 @@ if [ "$username" = "" ]; then
         useradd -m -s /bin/bash $username
 
 fi
+
+#select background image
+echo "select your background image"
+select selectimage in "notebook" "computer"; do
+
+	case $selectimage in
+
+		notebook)
+cp ./config/images/pictures/.background/notebook.jpg /home/$username/pictures/.background/bg.jpg
+break
+;;
+
+		computer)
+cp ./config/images/pictures/.background/computer.jpg /home/$username/pictures/.background/bg.jpg
+break
+;;
+
+		*)
+
+echo "not a valid number"
+;;
+
+esac
+done
 
 #initialization user space
 mkdir /home/$username/sources
@@ -80,8 +103,6 @@ cp ./config/user/openbox/environment /home/$username/.config/openbox/environment
 cp ./config/user/openbox/menu.xml /home/$username/.config/openbox/menu.xml
 
 cp ./config/user/openbox/rc.xml /home/$username/.config/openbox/rc.xml
-
-cp -r ./config/images/pictures/.background/bg.jpg /home/$username/pictures/.background/bg.jpg
 
 cp ./config/user/init/.vimrc /home/$username/.vimrc
 
@@ -121,7 +142,7 @@ echo "system configure complete"
 exit 1
 ;;
 
-uninstall)
+        uninstall)
     read -p "warning! you sure uninstall $applications? (yes or no) " uninstall
 	if [ "$uninstall" = "yes" ]; then
 	pacman -Rscd --noconfirm $applications
@@ -132,8 +153,7 @@ fi
 ;;
 
 *) 
-    echo "error! not a number"
-	exit 1
+    echo "not a valid number"
 ;;
 
 esac
