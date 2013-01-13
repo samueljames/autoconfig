@@ -1,6 +1,6 @@
-#!/bin/bash
-#code by Samuel James
-#copyright GPLv3
+# !/bin/bash
+# code by Samuel James
+# copyright GPLv3
 
 if [ $(id -u) != "0" ]; then
 	echo "you are not root,please change to root and run again this script"
@@ -8,7 +8,8 @@ if [ $(id -u) != "0" ]; then
 else
 
 applications="xorg xorg-xinit alsa-utils openbox ntp wqy-microhei ttf-dejavu ttf-arphic-uming
-aria2 chromium openssh  rxvt-unicode flashplugin vim feh sudo scrot"
+aria2 chromium openssh rxvt-unicode flashplugin vim feh sudo scrot mutt \
+newsbeuter ranger cmus irssi ncdu"
 
 select selectd in "install-base-applications" "just-fix-bug" \
 "create-a-user" "auto-configure-system" \
@@ -18,10 +19,10 @@ select selectd in "install-base-applications" "just-fix-bug" \
 
 		install-base-applications)
 
-#install application 
+# install application 
 pacman -Syu --noconfirm $applications
 
-#check install
+# check install
 if [ -f /var/cache/pacman/pkg/openbox*.tar.xz ]; then
 	echo "you already install base applications"
 else
@@ -31,14 +32,14 @@ fi
 ;;
 
 		just-fix-bug)
-#fix bug
-#alidit libpng fixbug
+# fix bug
+# alidit libpng fixbug
 ln -sf /usr/lib/libpng.so /usr/lib/libpng12.so.0
 echo "fix bug complete"
 ;;
 
 		create-a-user)
-#check have a user
+# check have a user
 read -p "user name is? [default is samuel]: " username
 
 if [ "$username" = "" ]; then
@@ -49,14 +50,14 @@ fi
 ;;
 
 		auto-configure-system)
-#auto configure system
+# auto configure system
 if [ "$username" = "" ]; then
 	username="samuel"
         useradd -m -s /bin/bash $username
 
 fi
 
-#select background image
+# select background image
 echo "select your background image"
 select selectimage in "notebook" "computer"; do
 
@@ -80,7 +81,7 @@ echo "not a valid number"
 esac
 done
 
-#initialization user space
+# initialization user space
 mkdir /home/$username/sources
 
 mkdir /home/$username/downloads 
@@ -89,7 +90,7 @@ mkdir -p /home/$username/pictures/.background
 
 mkdir -p /home/$username/.config/openbox
 
-#configure system
+# configure system
 cp ./config/user/init/.xinitrc /home/$username/.xinitrc
 
 cp ./config/user/init/.bashrc /home/$username/.bashrc
@@ -106,7 +107,9 @@ cp ./config/user/openbox/rc.xml /home/$username/.config/openbox/rc.xml
 
 cp ./config/user/init/.vimrc /home/$username/.vimrc
 
-#change file to user	
+cp ./config/user/applications/.muttrc /home/$username/.muttrc
+
+# change file to user	
 chown -R $username:$usernmae /home/$username/.xinitrc
 
 chown -R $username:$usernmae /home/$username/sources
@@ -136,7 +139,7 @@ chown -R $username:$usernmae /home/$username/.bashrc
 
 		clear-and-exit-install)
 
-#clear and over install
+# clear and over install
 clear
 echo "system configure complete"
 exit 1
