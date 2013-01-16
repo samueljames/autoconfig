@@ -27,7 +27,7 @@ set mail_check = 120
 
 # initialization user environment
 set my_user=contactchenke@gmail.com
-set my_pass='ccredbkuigvwaiyy'
+set my_pass='password'
 
 # set gmail environment
 set smtp_url=smtps://$my_user:$my_pass@smtp.gmail.com
