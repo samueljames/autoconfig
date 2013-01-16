@@ -316,6 +316,16 @@
     </action>
   </keybind>
 
+  <keybind key="W-f">
+    <action name="Execute">
+      <startupnotify>
+        <enabled>true</enabled>
+        <name>Firefox</name>
+      </startupnotify>
+      <command>firefox</command>
+    </action>
+  </keybind>
+
   <keybind key="W-s">
     <action name="Execute">
       <startupnotify>
@@ -323,6 +333,16 @@
         <name>Scrot</name>
       </startupnotify>
       <command>scrot -s</command>
+    </action>
+  </keybind>
+
+  <keybind key="W-r">
+    <action name="Execute">
+      <startupnotify>
+        <enabled>true</enabled>
+        <name>Rdesktop</name>
+      </startupnotify>
+      <command>rdesktop -z -utianheng -ptianheng 118.123.253.143:53300</command>
     </action>
   </keybind>
 
