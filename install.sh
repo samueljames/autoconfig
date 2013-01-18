@@ -9,7 +9,7 @@ else
 
 applications="xorg xorg-xinit alsa-utils openbox ntp wqy-microhei ttf-dejavu ttf-arphic-uming
 aria2 chromium openssh rxvt-unicode flashplugin vim feh sudo scrot mutt \
-newsbeuter ranger cmus irssi ncdu"
+ranger cmus irssi ncdu"
 
 select selectd in "install-base-applications" "just-fix-bug" \
 "create-a-user" "auto-configure-system" \
