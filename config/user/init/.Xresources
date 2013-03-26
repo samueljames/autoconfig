@@ -20,5 +20,6 @@ urxvt.font:xft:dejavu sans mono:size=18
 urxvt.scrollBar:false
 urxvt.scrollWithBuffer:true
 
-!urxvt input configure
+!urxvt input method set
+URxvt.inputMethod:fcitx
 urxvt.preeditType:Root 
