@@ -2,5 +2,6 @@ feh --bg-scale ~/pictures/.background/bg.jpg &
 xrdb ~/.Xresources &
 urxvtd &
 fcitx-autostart &
+xcompmgr &
+numlockx &
 xset b off
-synclient touchpadoff=1
