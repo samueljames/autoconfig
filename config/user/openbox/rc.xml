@@ -336,16 +336,6 @@
     </action>
   </keybind>
 
-  <keybind key="W-r">
-    <action name="Execute">
-      <startupnotify>
-        <enabled>true</enabled>
-        <name>Rdesktop</name>
-      </startupnotify>
-      <command>rdesktop -z -utianheng -ptianheng 118.123.253.143:53300</command>
-    </action>
-  </keybind>
-
 </keyboard>
 
 <mouse>
