@@ -9,7 +9,7 @@ else
 
 applications="xorg xorg-xinit alsa-utils openbox ntp wqy-microhei ttf-dejavu ttf-arphic-uming
 wget chromium openssh rxvt-unicode flashplugin vim feh sudo scrot mutt \
-ranger rsync bzip2 cronie dnsmasq"
+ranger rsync bzip2 cronie dnsmasq numlockx xcompmgr"
 
 select selectd in "install-base-applications" "just-fix-bug" \
 "create-a-user" "auto-configure-system" \
