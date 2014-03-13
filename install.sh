@@ -8,8 +8,8 @@ if [ $(id -u) != "0" ]; then
 else
 
 applications="xorg xorg-xinit alsa-utils openbox ntp wqy-microhei ttf-dejavu ttf-arphic-uming
-wget chromium openssh rxvt-unicode flashplugin vim feh sudo scrot mutt \
-ranger rsync bzip2 cronie dnsmasq numlockx xcompmgr"
+wget chromium openssh rxvt-unicode flashplugin vim feh sudo scrot \
+rsync cronie dnsmasq numlockx xcompmgr encfs"
 
 select selectd in "install-base-applications" "just-fix-bug" \
 "create-a-user" "auto-configure-system" \
