@@ -82,7 +82,9 @@ esac
 done
 
 # initialization user space
-mkdir /home/$username/sources
+mkdir -p /home/$username/document/sources
+
+mkdir -p /home/$username/document/mounts
 
 mkdir /home/$username/downloads 
 
