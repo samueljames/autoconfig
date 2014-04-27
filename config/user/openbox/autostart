@@ -3,5 +3,4 @@ xrdb ~/.Xresources &
 urxvtd &
 fcitx-autostart &
 xcompmgr &
-numlockx &
 xset b off
