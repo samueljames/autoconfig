@@ -306,7 +306,7 @@
     </action>
   </keybind>
 
-  <keybind key="W-c">
+  <keybind key="W-w">
     <action name="Execute">
       <startupnotify>
         <enabled>true</enabled>
