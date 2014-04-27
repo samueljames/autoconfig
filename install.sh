@@ -64,12 +64,12 @@ select selectimage in "notebook" "computer"; do
 	case $selectimage in
 
 		notebook)
-cp ./config/images/notebook.jpg /home/$username/pictures/.background/bg.jpg
+cp ./config/images/notebook.jpg /home/$username/.config/openbox/background/bg.jpg
 break
 ;;
 
 		computer)
-cp ./config/images/computer.jpg /home/$username/pictures/.background/bg.jpg
+cp ./config/images/computer.jpg /home/$username/.config/openbox/background/bg.jpg
 break
 ;;
 
