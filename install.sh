@@ -114,7 +114,7 @@ cp ./config/user/applications/.muttrc /home/$username/.muttrc
 # change file to user	
 chown -R $username:$usernmae /home/$username/.xinitrc
 
-chown -R $username:$usernmae /home/$username/sources
+chown -R $username:$usernmae /home/$username/document/sources
 
 chown -R $username:$usernmae /home/$username/downloads
 
