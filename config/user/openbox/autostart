@@ -1,6 +1,5 @@
-feh --bg-scale ~/pictures/.background/bg.jpg &
+feh --bg-scale ~/.config/openbox/background/bg.jpg &
 xrdb ~/.Xresources &
 urxvtd &
 fcitx-autostart &
 xcompmgr &
-xset b off
