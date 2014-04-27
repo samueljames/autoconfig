@@ -64,12 +64,12 @@ select selectimage in "notebook" "computer"; do
 	case $selectimage in
 
 		notebook)
-cp ./config/images/pictures/.background/notebook.jpg /home/$username/pictures/.background/bg.jpg
+cp ./config/images/notebook.jpg /home/$username/pictures/.background/bg.jpg
 break
 ;;
 
 		computer)
-cp ./config/images/pictures/.background/computer.jpg /home/$username/pictures/.background/bg.jpg
+cp ./config/images/computer.jpg /home/$username/pictures/.background/bg.jpg
 break
 ;;
 
@@ -82,15 +82,15 @@ esac
 done
 
 # initialization user space
-mkdir -p /home/$username/document/sources
-
-mkdir -p /home/$username/document/mounts
+mkdir /home/$username/document
 
 mkdir /home/$username/downloads 
 
-mkdir -p /home/$username/pictures/.background
+mkdir /home/$username/pictures/
 
-mkdir -p /home/$username/.config/openbox
+mkdir /home/$username/.config/openbox
+
+mkdir /home/$username/.config/openbox/background
 
 # configure system
 cp ./config/user/init/.xinitrc /home/$username/.xinitrc
@@ -134,7 +134,7 @@ chown -R $username:$usernmae /home/$username/.config/openbox/rc.xml
 
 chown -R $username:$usernmae /home/$username/.vimrc
 
-chown -R $username:$usernmae /home/$username/pictures/.background/bg.jpg
+chown -R $username:$usernmae /home/$username/.config/openbox/background/bg.jpg
 
 chown -R $username:$usernmae /home/$username/.bashrc
 ;;
