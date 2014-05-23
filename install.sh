@@ -86,7 +86,9 @@ mkdir /home/$username/document
 
 mkdir /home/$username/downloads 
 
-mkdir /home/$username/pictures/
+mkdir /home/$username/pictures
+
+mkdir /home/$username/.config
 
 mkdir /home/$username/.config/openbox
 
